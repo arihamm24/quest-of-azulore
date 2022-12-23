@@ -1,0 +1,328 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="azulore.css">
+        <title>Quest of Azulore</title>
+        <script>
+            function show(param_div_id) {
+                document.getElementById('start').innerHTML = document.getElementById(param_div_id).innerHTML;
+            }
+            function greet(){
+                var name=document.getElementById("userName").value;
+                document.getElementById("welcome").innerHTML = name + "..." + " A name fit for such a promising warrior";
+            }
+        </script>
+    </head>
+    <body>
+     <div id="start">
+            <h1>The Quest of Azulore</h1>
+            <img src="castle.png" style="display:block; margin:0 auto;">
+            <button id="continue" type="button" onclick="show('game-open')">Begin my quest</button>
+        </div>
+        <!--ONBOARDING-->
+        <div id="game-open" style="display:none;">
+            <img src="wizard-sprite.png" alt="a pixelated sprite of a wizard in blue robe and hat with staff"/>
+            <h2>Greetings, traveler! Welcome to the land of Azulore. </h2>
+            <p>Enter your name</p>
+            <input id="userName" type="text"></input>
+            <button type="submit" onclick="greet()">--></button>
+            <h3 id="welcome"></h3>
+            <button type="button" onclick="show('weapon-select')">--></button>
+        </div>
+        <div id="weapon-select" style="display:none;">
+            <h2>Choose your weapon</h2>
+            <button id="sword-select" type="button" onclick="show('sword1')">1</button>
+            <button id="sword-select" type="button" onclick="show('sword2')">2</button>
+            <button id="sword-select" type="button" onclick="show('sword3')">3</button>
+        </div>
+            <div id="sword1" style="display:none;">
+                <img src="sword1.png" alt="silver sword with brown hilt, the hilt has golden accents"/>
+                <h3>Eternal Protector</h3>
+                <p>Tried and true sword of many warriors past. Tested by many years of battle, unwaveringly reliable</p>
+                <button type="button" onclick="show('quest-origin')">Yes</button>
+                <button type="button" onclick="show('weapon-select')">No</button>
+            </div>
+            <div id="sword2" style="display:none;">
+                <img src="sword2.png" alt="blue sword with green hilt"/>
+                <h3>Cometfell</h3>
+                <p>Sword of mysterious origin, with blade and hilt of otherworldy jewels</p>
+                <button type="button" onclick="show('quest-origin')">Yes</button>
+                <button type="button" onclick="show('weapon-select')">No</button>
+            </div>
+            <div id="sword3" style="display:none;">
+                <img src="sword3.png" alt="silver sword with black hilt"/>
+                <h3>Bandit's Sword</h3>
+                <p>A simple blade for a cutthroat warrior. Precise, exact, and honest</p>
+                <button type="button" onclick="show('quest-origin')">Yes</button>
+                <button type="button" onclick="show('weapon-select')">No</button>
+            </div>
+        <!--STORY BEGINS-->
+        <div id="quest-origin" style="display:none;">
+            <img src="wizard-sprite.png"/>
+            <p>An excellent choice, young warrior</p>
+            <h3>Now, to begin your journey, you must know the state of our kingdom</h4>
+            <button type="button" onclick="show('exposition1')">--></button>
+        </div>
+        <div id="exposition1" style="display:none;">
+            <img src="castle.png"/>
+            <p>Long ago, <strong>the kingdom of Azulore</strong> stood proud.</p>
+            <button type="button" onclick="show('exposition2')">--></button>
+        </div>
+        <div id="exposition2" style="display:none;">
+            <img src="crystal.png"/>
+            <p>Wizards like myself dutifully served the queen, protecting our sacred jewel:</p>
+            <h3>The Salanite of Azulore</h3>
+            <button type="button" onclick="show('exposition3')">--></button>
+        </div> 
+        <div id="exposition3" style="display:none;">
+            <img src="wizard-sprite.png"/>
+            <img src="wizard-sprite.png"/>
+            <img src="wizard-sprite.png"/>
+            <p> We performed our duties and protected the jewel well, until, from the mountains, we heard a defeaning</p>
+            <h2>ROAR</h2>
+            <button type="button" onclick="show('exposition4')">--></button>
+        </div>
+        <div id="exposition4" style="display:none;">
+            <img src="dragon-fire.png"/>
+            <p>The fabled dragon <strong>Tathoss the Firestarter</strong> attacked the castle and overwhelmed our defenses</p>
+            <button type="button" onclick="show('exposition5')">--></button>
+        </div>
+        <div id="exposition5" style="display:none;">
+            <img src="castle-destroyed.png"/>
+            <p>Once we finally chased him off, our castle lay in ruins. Our jewel was stolen. I was the only surviving wizard.</p>
+            <button type="button" onclick="show('end-expo')">--></button>
+        </div>
+        <div id="end-expo" style="display:none;">
+            <img src="wizard-sprite.png"/>
+            <p>We have awaited a warrior who will reclaim our crystal, defeat Tathoss, and restore our kingdom.</p>
+            <h3>Can you help us?</h3>
+            <button type="button" onclick="show('branch1')">Yes!</button>
+        </div>
+        <!--ADVENTURE-->
+        <div id="branch1" style="display:none;">
+            <h3>The first choice of your journey</h3>
+            <img src="path.png" alt="dirt path split into left and right forks"/>
+            <p>Which path will you take?</p>
+            <button type="button" onclick="show('left')">Left</button>
+            <button type="button" onclick="show('right')">Right</button>
+        </div>
+            <!--LEFT PATH-->
+            <div id="left" style="display:none;">
+                <img src="weary.png"/>
+                <p>You have chosen <strong>The Road of the Weary</strong>. These villagers are survivors of Tathoss's attacks.</p>
+                <p>They are devoted to his downfall and will be great allies</p>
+                <button type="button" onclick="show('cont-left')">--></button>
+            </div>
+                <div id="cont-left" style="display:none;">
+                    <h3>You found a villager! Widow Mary</h3>
+                    <img id="villager" src="mary.png">
+                    <button type="button" onclick="show('wid-mary')">--></button>
+                </div>
+                <div id="wid-mary" style="display:none;">
+                    <img id="villager" src="mary.png"/>
+                    <p>Oh, young warrior! You have come to rescue us!</p>
+                    <button type="button" onclick="show('mary1')">--></button>
+                </div>
+                    <div id="mary1" style="display:none;">
+                        <img id="villager" src="mary.png"/>
+                        <p>Tathoss has ruled for far too long. He keeps guards along these paths.</p>
+                        <button type="button" onclick="show('mary-choice')">--></button>
+                    </div>
+                    <div id="mary-choice" style="display:none;">
+                        <img src="woods.png"/>
+                        <p>Take this path through the woods, they won't see you there.</p>
+                        <button type="button" onclick="show('mary-path')">Take Mary's Path</button>
+                        <button type="button" onclick="show('capture')">Continue your Path</button>
+                    </div>
+            <div id="mary-path" style="display:none;">
+                <img src="coins.png">
+                <p>You carefully avoided Tathoss's soldiers. Along the way you found <strong>5 gold coins</strong></p>
+                <p>They may be useful later</p>
+                <button type="button" onclick="show('branch2')">--></button>
+            </div>
+            <!--RIGHT PATH-->
+            <div id="right" style="display:none;">
+                <img src="deranged.png"/>
+                <p>You have chosen <strong>The Road of the Deranged</strong>. These villagers survived Tathoss's attacks, but lost their minds along the way.</p>
+                <p>They are unreliable, think carefully before following their guidance.</p>
+                <button type="button" onclick="show('cont-right')">--></button>
+            </div>
+                <div id="cont-right" style="display:none;">
+                    <h3>You found a villager! Crazy Cecil</h3>
+                    <img id="villager" src="cecil.png">
+                    <button type="button" onclick="show('cra-cecil')">--></button>
+                </div>
+                <div id="cra-cecil" style="display:none;">
+                    <img id="villager" src="cecil.png">
+                    <p>A champion! A savior for the realm!</p>
+                    <button type="button" onclick="show('cecil1')">--></button>
+                </div>
+                    <div id="cecil1" style="display:none;">
+                        <img id="villager" src="cecil.png">
+                        <p>Tathoss has eyes, he sees all, you aren't safe here!</p>
+                        <button type="button" onclick="show('cecil-choice')">--></button>
+                    </div>
+                    <div id="cecil-choice" style="display:none;">
+                        <img src="field.png">
+                        <p>The field, young warrior! Go through the field!</p>
+                        <button type="button" onclick="show('cecil-path')">Take Cecil's Path</button>
+                        <button type="button" onclick="show('capture')">Continue your Path</button>
+                    </div>
+            <div id="cecil-path" style="display:none;">
+                <img src="snake.png">
+                <p>You snuck past Tathoss's soldiers easily. But along the way, a <strong>saber snake</strong> stole your sword</p>
+                <p>Will you continue unarmed?</p>
+                <button type="button" onclick="show('branch2')">Yes</button>
+                <button type="button" onclick="show('new-weapon')">No</button>
+            </div>
+                <div id="new-weapon" style="display:none;">
+                    <img src="mats.png">
+                    <p>You must make a new weapon from these materials in the field</p>
+                    <h3>Which weapon will you make?</h3>
+                    <button id="sword-select" type="button" onclick="show('weapon1')">1</button>
+                    <button id="sword-select" type="button" onclick="show('weapon2')">2</button>
+                    <button id="sword-select" type="button" onclick="show('weapon3')">3</button>
+                </div>
+                    <div id="weapon1" style="display:none;">
+                        <img src="bow-arrow.png">
+                        <h3>Bow and Arrow</h3>
+                        <p>Light, stealthy, long-ranged. Truly a weapon of rogues</p>
+                        <button type="button" onclick="show('branch2')">Yes</button>
+                        <button type="button" onclick="show('new-weapon')">No</button>
+                    </div>
+                    <div id="weapon2" style="display:none;">
+                        <img src="spear.png">
+                        <h3>Spear</h3>
+                        <p>Brute and deadly, a weapon of champions</p>
+                        <button type="button" onclick="show('branch2')">Yes</button>
+                        <button type="button" onclick="show('new-weapon')">No</button>
+                    </div>
+                    <div id="weapon3" style="display:none;">
+                        <img src="staff.png">
+                        <h3>Staff</h3>
+                        <p>Versatile and subtle. An instrument of peace, but useful should a fight arise</p>
+                        <button type="button" onclick="show('branch2')">Yes</button>
+                        <button type="button" onclick="show('new-weapon')">No</button>
+                    </div>
+            <div id="capture" style="display:none;">
+                <img src="soldier.png">
+                <p>Tathoss's soliders bested you! You have been captured!</p>
+                <h3>GAME OVER</h3>
+                <p id="game-over">Close and reopen program to restart game</p>
+            </div>
+        <div id="branch2" style="display:none;">
+            <h3>You made it out of the village!</h3>
+            <h4>What is your next step in reaching the castle?</h4>
+            <img src="path.png" style="rotate:90deg; display:block; margin:auto;"> <br>
+            <button type="button" onclick="show('castle-route1')">1</button>
+            <button type="button" onclick="show('castle-route2')">2</button>
+        </div>
+            <div id="castle-route1" style="display:none;">
+                <h2>Path 1</h2>
+                <img src="path-def.png" style="display:block; margin:auto;">
+                <button type="button" onclick="show('cr1')">Yes</button>
+                <button type="button" onclick="show('branch2')">No</button>
+            </div>
+            <div id="castle-route2" style="display:none;">
+                <h2>Path 2</h2>
+                <img src="path-def.png" style="display:block; margin:auto;">
+                <button type="button" onclick="show('cr2')">Yes</button>
+                <button type="button" onclick="show('branch2')">No</button>
+            </div>
+                <div id="cr1" style="display:none;">
+                    <h3>You found a merchant's wagon!</h3>
+                    <p>For 5 coins, he will take you directly to the castle!</p>
+                    <button type="button" onclick="show('castle-final')">Use my 5 coins</button>
+                    <button type="button" onclick="show('cr2')">I have no coins</button>
+                </div>
+                <div id="cr2" style="display:none;">
+                    <h3>One of Tathoss's soliders! You must defeat him to get to the castle!</h3>
+                    <img src="soldier.png" style="display:block; margin:auto;">
+                    <button type="button" onclick="show('victory')">Use my sword</button>
+                    <button type="button" onclick="show('defeat-staff')">Use my staff</button>
+                    <button type="button" onclick="show('victory')">Use my spear</button>
+                    <button type="button" onclick="show('defeat-bow')">Use my bow and arrow</button>
+                    <button type="button" onclick="show('capture')">I have no weapon</button>
+                </div>
+                    <div id="victory" style="display:none;">
+                        <img src="castle.png">
+                        <h2>You defeated Tathoss's soldier!</h2>
+                        <p>Hurry to the castle before more soldiers come!</p>
+                        <button type="button" onclick="show('castle-final')">--></button>
+                    </div>
+                    <div id="defeat-bow" style="display:none;">
+                        <h2>You lost!</h2>
+                        <img src="bow-arrow.png">
+                        <img src="soldier.png">
+                        <p>Your weapon was no match for Tathoss's soldier</p>
+                        <p>You were defeated and captured</p>
+                        <h3>GAME OVER</h3>
+                        <p id="game-over">Close and reopen program to restart game</p>
+                    </div>
+                    <div id="defeat-staff" style="display:none;">
+                        <h2>You lost!</h2>
+                        <img src="staff.png">
+                        <img src="soldier.png">
+                        <p>Your weapon was no match for Tathoss's soldier</p>
+                        <p>You were defeated and captured</p>
+                        <h3>GAME OVER</h3>
+                        <p id="game-over">Close and reopen program to restart game</p>
+                    </div>
+                <div id="castle-final" style="display:none;">
+                    <h2>You reached the castle! Enter to defeat Tathoss and save Azulore</h2>
+                    <img src="door.png" style="display:block; margin:auto;">
+                    <button type="button" onclick="show('showdown')">--></button>
+                </div>
+                <div id="showdown" style="display:none;">
+                    <h2>TATHOSS THE FIRESTARTER</h2>
+                    <img src="dragon-fire.png">
+                    <h3>ROAR!</h3>
+                    <p>You believe you can defeat me, warrior?</p>
+                    <button type="button" onclick="show('fight-start')">Attack</button>
+                </div>
+                    <div id="fight-start" style="display:none;">
+                        <h2>Defeat Tathoss!</h2>
+                        <img src="dragon-fire.png" style="display:block; margin:auto;" >
+                        <button id="dmg" type="button" onclick="show('strk1')">Strike</button>
+                    </div>
+                        <div id="strk1" style="display:none;">
+                            <img src="dragon-dmg.png" style="display:block; margin:auto;">
+                            <button id="dmg" type="button" onclick="show('strk2')">Strike</button>
+                        </div>
+                        <div id="strk2" style="display:none;">
+                            <img src="dragon-dmg.png" style="display:block; margin:auto;" width="250px" height="250px">
+                            <button id="dmg" type="button" onclick="show('strk3')">Strike</button>
+                        </div>
+                        <div id="strk3" style="display:none;">
+                            <img src="dragon-dmg.png" style="display:block; margin:auto;" width="200px" height="200px">
+                            <button id="dmg" type="button" onclick="show('dead')">Strike</button>
+                        </div>
+                        <div id="dead" style="display:none;">
+                            <img src="dragon-dead.png" style="display:block; margin:auto;">
+                            <h1>VICTORY!</h1>
+                            <button type="button" onclick="show('end')">--></button>
+                        </div>
+        <div id="end" style="display:none;">
+            <h1>You defeated Tathoss and returned the crystal!</h1>
+            <img id="endscreen" src="mary.png">
+            <img id="endscreen" src="cecil.png">
+            <img id="endscreen" src="wizard-sprite.png">
+            <h2 id="thank">Thank you, thank you, young warrior!</h2>
+            <p id="game-over">Close and reopen program to restart game</p>
+            <button type="button" onclick="show('credits')">Credits</button>
+        </div>
+        <div id="credits" style="display:none;">
+            <h2>Story by</h2>
+            <p id="cred">Ari Hammond</p>
+            <h2>Graphics by</h2>
+            <p id="cred">Ari Hammond</p>
+            <p id="cred-note">via <a href="https://www.piskelapp.com/" target="_blank">Piskel</a></p>
+            <h2>Layout and Source Code by</h2>
+            <p id="cred">Ari Hammond</p>
+            <div id="line"></div>
+            <p id="cred-note">Made with VS Code</p>
+            <a href="https://www.github.com/arihamm24" target="_blank">More by Ari Hammond</a>
+        </div>
+    </body>
+</html>
