@@ -1,0 +1,69 @@
+:root{
+    --bkgrnd: rgb(32, 22, 43);
+    --txt-color: rgb(204,204,0);
+}
+*{
+    background-color: var(--bkgrnd);
+    color: var(--txt-color);
+    font-family: 'Courier New', Courier, monospace;
+}
+h1{
+    font-size: 2.2em;
+}
+h2{
+    font-size:1.5em;
+}
+h3{
+    font-size: 1.3em;
+}
+p{
+    font-size: 1.1em;
+}
+div{
+    margin: auto;
+    padding-top: 15px;
+    text-align: center;
+    display: block;
+}
+button{
+    width: 17%;
+    height: 5%;
+    border: 2px solid var(--txt-color);
+    margin: 12px;
+}
+button:hover, a:hover{
+    background-color: var(--txt-color);
+    color: var(--bkgrnd);
+}
+input{
+    border: 1.5px dotted var(--txt-color);
+    height: 5%;
+    width: auto;
+}
+#sword-select{
+    width: 20%;
+    height: 10%;
+    border: 2px solid var(--txt-color);
+    margin-bottom: 12px;
+}
+#villager{
+    display:block;
+    margin: 0 auto;
+}
+#game-over{
+    font-style:italic;
+}
+#cred-note{
+    font-style:italic;
+    font-size: 0.9rem;
+}
+#line{
+    width:90%;
+    color:var(--txt-color);
+    margin: auto;
+}
+#endscreen{
+    display: inline-block;
+}
+
+
