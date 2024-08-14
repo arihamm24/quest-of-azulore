@@ -15,4 +15,4 @@
 <p>The html file for this game is being run on GitHub Pages!</p>
 <a href="https://arihamm24.github.io/quest-of-azulore" target="_blank">Click Here to play</a>
 <h2>How to Contribute</h2>
-<p>This game is admittedly rudimentary, and I am publishing here to attract other amateur developers. If you play through <em>Azulore</em> and find ways it could be improved (i.e, accessibility, layout, additional branches/endings), feel free to fork this repository and play around! </p>
+<p>This game is admittedly rudimentary, and I am publishing here to attract other amateur developers. If you play through <em>Azulore</em> and find ways it could be improved (i.e, accessibility, layout, additional branches/endings), feel free to make a new branch and expand the world! </p>
