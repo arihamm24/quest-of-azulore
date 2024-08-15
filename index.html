@@ -12,14 +12,18 @@
                 var name=document.getElementById("userName").value;
                 document.getElementById("welcome").innerHTML = name + "..." + " A name fit for such a promising warrior";
             }
-            const fanfare = new Audio("landing_theme.mp3");
+            const fanfare = new Audio("landing_theme.mp3"); //varname.play() == onclick action
+            const theme = new Audio("main_theme.mp3");
+            theme.loop = true;
+            const battle = new Audio();
+            battle.loop = true;
         </script>
     </head>
     <body>
      <div id="start">
             <h1>The Quest of Azulore</h1>
             <img src="castle.png" style="display:block; margin:0 auto;">
-            <button id="continue" type="button" onclick="show('game-open'); fanfare.play()">Begin my quest</button>
+            <button id="continue" type="button" onclick="show('game-open')">Begin my quest</button>
         </div>
         <!--ONBOARDING-->
         <div id="game-open" style="display:none;">
@@ -98,7 +102,7 @@
             <img src="wizard-sprite.png"/>
             <p>We have awaited a warrior who will reclaim our crystal, defeat Tathoss, and restore our kingdom.</p>
             <h3>Can you help us?</h3>
-            <button type="button" onclick="show('branch1')">Yes!</button>
+            <button type="button" onclick="show('branch1'); theme.play()">Yes!</button>
         </div>
         <!--ADVENTURE-->
         <div id="branch1" style="display:none;">
@@ -273,7 +277,7 @@
                 <div id="castle-final" style="display:none;">
                     <h2>You reached the castle! Enter to defeat Tathoss and save Azulore</h2>
                     <img src="door.png" style="display:block; margin:auto;">
-                    <button type="button" onclick="show('showdown')">--></button>
+                    <button type="button" onclick="theme.pause(); show('showdown'); battle.play()">--></button>
                 </div>
                 <div id="showdown" style="display:none;">
                     <h2>TATHOSS THE FIRESTARTER</h2>
@@ -297,7 +301,7 @@
                         </div>
                         <div id="strk3" style="display:none;">
                             <img src="dragon-dmg.png" style="display:block; margin:auto;" width="250px" height="250px">
-                            <button id="dmg" type="button" onclick="show('dead')">Strike</button>
+                            <button id="dmg" type="button" onclick="battle.pause(); show('dead'); fanfare.play()">Strike</button>
                         </div>
                         <div id="dead" style="display:none;">
                             <img src="dragon-dead.png" style="display:block; margin:auto;">
@@ -310,7 +314,7 @@
             <img id="endscreen" src="cecil.png">
             <img id="endscreen" src="wizard-sprite.png">
             <h2 id="thank">Thank you, thank you, young warrior!</h2>
-            <p id="game-over">Close and reopen program to restart game</p>
+            <p id="game-over">Refresh to restart game</p>
             <button type="button" onclick="show('credits')">Credits</button>
         </div>
         <div id="credits" style="display:none;">
@@ -324,9 +328,10 @@
             <h2>Layout and Source Code by</h2>
             <p id="cred">Ari Hammond</p>
             <div id="line"></div>
-            <p id="cred-note">Made with VS Code</p>
-            <a href="https://www.github.com/arihamm24" target="_blank">More Web Design from Ari Hammond</a>
-            <a href="https://arihammond.bandcamp.com" target="_blank">More Music from Ari Hammond</a>
+            <br>
+            <h3><a href="https://github.com/arihamm24/quest-of-azulore">Contribute to the Game</a></h3>
+            <p id="cred-note"><a href="https://www.github.com/arihamm24" target="_blank">More Web Design from Ari Hammond</a></p>
+            <p id="cred-note"><a href="https://arihammond.bandcamp.com" target="_blank">More Music from Ari Hammond</a></p>
         </div>
     </body>
 </html>

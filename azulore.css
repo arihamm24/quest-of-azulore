@@ -30,6 +30,7 @@ button{
     height: 5%;
     border: 2px solid var(--txt-color);
     margin: 12px;
+    overflow-wrap: initial;
 }
 button:hover, a:hover{
     background-color: var(--txt-color);
