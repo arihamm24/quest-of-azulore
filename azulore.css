@@ -1,6 +1,6 @@
 :root{
-    --bkgrnd: rgb(32, 22, 43);
-    --txt-color: rgb(204,204,0);
+    --bkgrnd: #20162b;
+    --txt-color: #cccc00;
 }
 *{
     background-color: var(--bkgrnd);

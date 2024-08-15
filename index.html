@@ -12,14 +12,14 @@
                 var name=document.getElementById("userName").value;
                 document.getElementById("welcome").innerHTML = name + "..." + " A name fit for such a promising warrior";
             }
-            
+            const fanfare = new Audio("landing_theme.mp3");
         </script>
     </head>
     <body>
      <div id="start">
             <h1>The Quest of Azulore</h1>
             <img src="castle.png" style="display:block; margin:0 auto;">
-            <button id="continue" type="button" onclick="show('game-open')">Begin my quest</button>
+            <button id="continue" type="button" onclick="show('game-open'); fanfare.play()">Begin my quest</button>
         </div>
         <!--ONBOARDING-->
         <div id="game-open" style="display:none;">
@@ -319,11 +319,14 @@
             <h2>Graphics by</h2>
             <p id="cred">Ari Hammond</p>
             <p id="cred-note">via <a href="https://www.piskelapp.com/" target="_blank">Piskel</a></p>
+            <h2>Music by</h2>
+            <p id="cred">Ari Hammond</p>
             <h2>Layout and Source Code by</h2>
             <p id="cred">Ari Hammond</p>
             <div id="line"></div>
             <p id="cred-note">Made with VS Code</p>
-            <a href="https://www.github.com/arihamm24" target="_blank">More by Ari Hammond</a>
+            <a href="https://www.github.com/arihamm24" target="_blank">More Web Design from Ari Hammond</a>
+            <a href="https://arihammond.bandcamp.com" target="_blank">More Music from Ari Hammond</a>
         </div>
     </body>
 </html>
