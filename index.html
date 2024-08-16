@@ -15,15 +15,19 @@
             const fanfare = new Audio("landing_theme.mp3"); //varname.play() == onclick action
             const theme = new Audio("main_theme.mp3");
             theme.loop = true;
+            const prologue = new Audio();
+            prologue.loop = true;
             const battle = new Audio();
             battle.loop = true;
+            const credits = new Audio;
+            credits.loop = true;
         </script>
     </head>
     <body>
      <div id="start">
             <h1>The Quest of Azulore</h1>
             <img src="castle.png" style="display:block; margin:0 auto;">
-            <button id="continue" type="button" onclick="show('game-open')">Begin my quest</button>
+            <button id="continue" type="button" onclick="show('game-open'); prologue.play()">Begin my quest</button>
         </div>
         <!--ONBOARDING-->
         <div id="game-open" style="display:none;">
@@ -102,7 +106,7 @@
             <img src="wizard-sprite.png"/>
             <p>We have awaited a warrior who will reclaim our crystal, defeat Tathoss, and restore our kingdom.</p>
             <h3>Can you help us?</h3>
-            <button type="button" onclick="show('branch1'); theme.play()">Yes!</button>
+            <button type="button" onclick="prologue.pause(); show('branch1'); theme.play()">Yes!</button>
         </div>
         <!--ADVENTURE-->
         <div id="branch1" style="display:none;">
@@ -306,7 +310,7 @@
                         <div id="dead" style="display:none;">
                             <img src="dragon-dead.png" style="display:block; margin:auto;">
                             <h1>VICTORY!</h1>
-                            <button type="button" onclick="show('end')">--></button>
+                            <button type="button" onclick="show('end'); credits.play()">--></button>
                         </div>
         <div id="end" style="display:none;">
             <h1>You defeated Tathoss and returned the crystal!</h1>
