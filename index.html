@@ -19,6 +19,8 @@
             prologue.loop = true;
             const battle = new Audio();
             battle.loop = true;
+            const game_over = new Audio();
+            game_over.loop = true;
             const credits = new Audio;
             credits.loop = true;
         </script>
@@ -142,7 +144,7 @@
                         <img src="woods.png"/>
                         <p>Take this path through the woods, they won't see you there.</p>
                         <button type="button" onclick="show('mary-path')">Take Mary's Path</button>
-                        <button type="button" onclick="show('capture')">Continue your Path</button>
+                        <button type="button" onclick="theme.pause();show('capture');game_over.play()">Continue your Path</button>
                     </div>
             <div id="mary-path" style="display:none;">
                 <img src="coins.png">
@@ -176,7 +178,7 @@
                         <img src="field.png">
                         <p>The field, young warrior! Go through the field!</p>
                         <button type="button" onclick="show('cecil-path')">Take Cecil's Path</button>
-                        <button type="button" onclick="show('capture')">Continue your Path</button>
+                        <button type="button" onclick="theme.pause(); show('capture'); game_over.play()">Continue your Path</button>
                     </div>
             <div id="cecil-path" style="display:none;">
                 <img src="snake.png">
@@ -249,10 +251,10 @@
                     <h3>One of Tathoss's soliders! You must defeat him to get to the castle!</h3>
                     <img src="soldier.png" style="display:block; margin:auto;">
                     <button type="button" onclick="show('victory')">Use my sword</button>
-                    <button type="button" onclick="show('defeat-staff')">Use my staff</button>
+                    <button type="button" onclick="theme.pause();show('defeat-staff');game_over.play()">Use my staff</button>
                     <button type="button" onclick="show('victory')">Use my spear</button>
-                    <button type="button" onclick="show('defeat-bow')">Use my bow and arrow</button>
-                    <button type="button" onclick="show('capture')">I have no weapon</button>
+                    <button type="button" onclick="theme.pause();show('defeat-bow');game_over.play()">Use my bow and arrow</button>
+                    <button type="button" onclick="theme.pause();show('capture');game_over.play()">I have no weapon</button>
                 </div>
                     <div id="victory" style="display:none;">
                         <img src="castle.png">
@@ -281,7 +283,7 @@
                 <div id="castle-final" style="display:none;">
                     <h2>You reached the castle! Enter to defeat Tathoss and save Azulore</h2>
                     <img src="door.png" style="display:block; margin:auto;">
-                    <button type="button" onclick="theme.pause(); show('showdown'); battle.play()">--></button>
+                    <button type="button" onclick="theme.pause(); show('showdown');battle.play()">--></button>
                 </div>
                 <div id="showdown" style="display:none;">
                     <h2>TATHOSS THE FIRESTARTER</h2>
@@ -310,7 +312,7 @@
                         <div id="dead" style="display:none;">
                             <img src="dragon-dead.png" style="display:block; margin:auto;">
                             <h1>VICTORY!</h1>
-                            <button type="button" onclick="show('end'); credits.play()">--></button>
+                            <button type="button" onclick="show('end');credits.play()">--></button>
                         </div>
         <div id="end" style="display:none;">
             <h1>You defeated Tathoss and returned the crystal!</h1>
